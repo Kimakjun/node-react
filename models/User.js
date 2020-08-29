@@ -10,6 +10,10 @@ const userSchema = mongoose.Schema({
         trim: true, //빈공간을 없애주는 역활.
         unique: 1 // 유니크한역활.
     },
+    password: {
+        type: String,
+        minlength: 5
+    },
     lastname: {
         type: String,
         maxlength: 50
