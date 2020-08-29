@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const port = 5000;
+
+const config = require('./config/key');
+
 const {User} = require('./models/User');
-
-
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://kimhakjun:gkrwns123@boilerplate.fidoa.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+
+mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => {
     console.log('mongodb connected...');
