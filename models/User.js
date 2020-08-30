@@ -80,6 +80,24 @@ userSchema.methods.generateToken = function(cb){
 
 }
 
+// methods, statics 차이.
+// 가르키는 this 값이 다르다.
+// statics 는 this 가 모델자체를 가르키고
+// methods 같은 경우는 데이터 인스턴스를 가르킨다.
+
+userSchema.statics.findByToken = function(token, cb){
+    let user = this;
+
+    jwt.verify(token, 'secretToken', (err, decoded)=>{
+        user.findOne({"_id": decoded, "token": token}, (err, user)=>{
+            if(err) return cb(err);
+            cb(null, user);
+        })
+    })
+
+}
+
+
 // 모델은 스키마를 감싸주는 역활...
 const User = mongoose.model('User', userSchema);
 
