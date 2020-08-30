@@ -20,8 +20,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
+app.get('/api/', (req, res) => {
+    res.json({
+        data: 'hello react'
+    })
 })
 
 app.post('api/users/register', (req, res) => {
