@@ -53,7 +53,7 @@ app.post('api/users/login', (req, res, next)=>{
         }
 
     user.comparePassword(req.body.password, (err, isMatch)=>{
-        if(!isMatch){
+        if(!isMatch){ 
             return res.json({loginSuccess: false, message: "비밀번호가 틀렸습니다."});
         }
         
