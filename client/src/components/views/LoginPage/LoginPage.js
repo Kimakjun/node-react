@@ -9,7 +9,6 @@ const LoginWrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 100vh;
-    color: red;
 `;
 
 const Form = styled.form`

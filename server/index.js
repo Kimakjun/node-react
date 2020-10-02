@@ -20,13 +20,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
-app.get('/api/', (req, res) => {
+app.get('/api', (req, res) => {
     res.json({
         data: 'hello react'
     })
 })
 
-app.post('api/users/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
     
     const user = new User(req.body);
 
@@ -39,7 +39,7 @@ app.post('api/users/register', (req, res) => {
 
 });
 
-app.post('api/users/login', (req, res, next)=>{
+app.post('/api/users/login', (req, res, next)=>{
 
     // 요청된 이메일을 데이터 베이스에서 찾는다.
     // 있다면 비밀번호가 일치하는지 확인.
