@@ -6,7 +6,7 @@
 ````javascript
     ex) 
     module.exports = {
-    mongoURI : 'mongodb+srv://hakjun:1234@cluster0.dvkib.mongodb.net/<dbname>?retryWrites=true&w=majority'
+    mongoURI : 'mongodb+srv://<id>:<pw>@cluster0.dvkib.mongodb.net/<dbname>?retryWrites=true&w=majority'
     }
 ```` 
 
