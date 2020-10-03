@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react'
+import React from 'react'
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components'
 
@@ -12,11 +13,13 @@ const MainWrapper = styled.div`
 
 function LandingPage(props) {
 
+    const history = useHistory();
+
     const onClick = () => {
         axios.get('/api/users/logout')
             .then(res=>{
                if(res.data.success){
-                   props.history.push('/login');
+                  history.push('/login')
                }else{
                    alert('로그아웃 실패');
                }

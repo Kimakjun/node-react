@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
+import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {registerUser} from '../../../_actions/user_action.js'
 
@@ -27,6 +28,7 @@ const initialState = {
 
 function RegisterPage(props) {
 
+    const history = useHistory()
     const dispatch = useDispatch();
 
     const [inputs, setInputs] = useState(initialState);
@@ -47,7 +49,7 @@ function RegisterPage(props) {
         dispatch(registerUser(inputs))
             .then(res => {
                 if(res.payload.success){
-                    props.history.push('/login');
+                    history.push('/login');
                 }else{
                     alert('fail to signup');
                 }

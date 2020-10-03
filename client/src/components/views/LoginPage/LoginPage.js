@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
+import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {loginUser} from '../../../_actions/user_action.js'
 
@@ -23,6 +24,7 @@ const initialState = {
 
 function LoginPage(props) {
 
+    const history = useHistory();
     const dispatch = useDispatch();
 
     const [inputs, setInputs] = useState(initialState);
@@ -39,7 +41,7 @@ function LoginPage(props) {
         dispatch(loginUser(inputs))
             .then(res => {
                 if(res.payload.loginSuccess){
-                    props.history.push('/');
+                    history.push('/');
                 }else{
                     alert('Error');
                 }
