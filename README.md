@@ -9,7 +9,8 @@
     mongoURI : 'mongodb+srv://hakjun:1234@cluster0.dvkib.mongodb.net/<dbname>?retryWrites=true&w=majority'
     }
 ```` 
+- pakages install and excute
+    bolier-plate/client => npm i
+    bolier-plate/server => npm i 
+    bolier-plate/server => npm run dev
 
-- bolier-plate/client => npm i
-- bolier-plate/server => npm i 
-- bolier-plate/server => npm run dev
